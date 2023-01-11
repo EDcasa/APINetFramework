@@ -1,0 +1,14 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Plan de ahorros</h1>
+</div>
+
+<div class="row">
+    <div class="col-md">
+        <app-payment-detail-form></app-payment-detail-form>
+    </div>
+</div>
+<div class="row" *ngIf="loadPlanSaving">
+    <div class="col-md">
+        <app-detail-saving [cPlanType]="this.loadPlanSaving"></app-detail-saving>
+    </div>
+</div>

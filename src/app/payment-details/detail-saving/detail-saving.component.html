@@ -1,0 +1,28 @@
+<div class="row">
+    <table  class="table">
+        <thead>
+            <tr>
+                <th>
+                    Mes
+                </th>
+                <th>
+                    Impuesto Mensual
+                </th>
+                <th>
+                    Valor Mensual
+                </th>
+                <th>
+                    Ahorro total
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sMonth of arrAccount">
+                <td> {{sMonth.month}} </td>
+                <td> {{sMonth.interestedMonthly}} </td>
+                <td> {{sMonth.valueSaving}} </td>
+                <td> {{sMonth.totalSaving}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

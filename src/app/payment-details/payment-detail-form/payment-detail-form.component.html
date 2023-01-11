@@ -1,0 +1,62 @@
+<form novalidate autocomplete="off" [formGroup]="formClient" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md">
+            <div class="form-group">
+                <label>Nombres</label>
+                <input 
+                    class="form-control form-control-lg" 
+                    placeholder="Ingrese sus Nombres" 
+                    formControlName="firstName"
+                    required [class.invalid]="formClient.controls.firstName.invalid && formClient.controls.firstName.touched">
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input 
+                    class="form-control form-control-lg" 
+                    placeholder="Ingrese sus Apellidos" 
+                    formControlName="lastName"
+                    required [class.invalid]="formClient.controls.lastName.invalid && formClient.controls.lastName.touched">
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label>Número de identificación</label>
+        <input 
+        class="form-control form-control-lg" 
+        placeholder="Ingrese su número de identificación"
+        required 
+        maxlength="10" 
+        minlength="10" 
+        formControlName="documentNumber"
+        [class.invalid]="formClient.controls.documentNumber.invalid && formClient.controls.documentNumber.touched">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>MONTO DE AHORRO</label>
+            <input 
+            type="number" 
+            min="100"
+            class="form-control form-control-lg" 
+            placeholder="Ingrese el monto, valor minimo  USD 100" 
+            required
+            formControlName="amountSaving"
+            [class.invalid]="formClient.controls.amountSaving.invalid && formClient.controls.amountSaving.touched">
+        </div>
+        <div class="form-group col-md-6">
+            <label>INTERES ANUAL (%)</label>
+            <input 
+            type="text" 
+            class="form-control form-control-lg" 
+            placeholder="Interes anual" 
+            readonly
+            value="3.00">
+        </div>
+    </div>
+    <div class="form-group text-center">
+        <button class="btn btn-success btn-lg btn-lg mr-5" type="submit" [disabled]="formClient.invalid">GENERAR AHORRO</button>
+        <button class="btn btn-info btn-lg btn-lg" (click)="reloadPage()">NUEVO AHORRO</button>
+    </div>
+</form>
